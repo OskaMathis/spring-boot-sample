@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property resource="application.yml"/>
+    <contextName>com.example.demo.DemoApplication</contextName>
+
+    <springProfile name="local">
+        <include resource="org/springframework/boot/logging/logback/base.xml" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="dev, stg, prod">
+        <include resource="logback/json-layout.xml" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+</configuration>
