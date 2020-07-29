@@ -1,6 +1,5 @@
 package com.example.demo.filter
 
-import com.example.demo.interceptor.RequestAndResponseLoggingInterceptor
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
@@ -15,7 +14,7 @@ import javax.servlet.http.HttpServletResponse
 
 class RequestAndResponseLoggingFilter : OncePerRequestFilter() {
     companion object {
-        private val log = LoggerFactory.getLogger(RequestAndResponseLoggingInterceptor::class.java)
+        private val log = LoggerFactory.getLogger(RequestAndResponseLoggingFilter::class.java)
         private val mapper = jacksonObjectMapper()
 
         private val VISIBLE_TYPES = listOf(
